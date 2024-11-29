@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp( MyApp() );
+  runApp( const MyApp() );
 }
 
 class MyApp extends StatelessWidget {
@@ -14,10 +14,30 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.green,
           title: const Text('Health App'),
+          actions: [
+            IconButton(
+              onPressed: () {
+
+              }, 
+              icon: icon,
+              tooltip: 'Open dashboard'),
+            IconButton(
+              onPressed: () {
+
+              }, 
+              icon: icon,
+              tooltip: 'Open training panel'),
+            IconButton(
+              onPressed: () {
+
+              }, 
+              icon: icon,
+              tooltip: 'Open health panel')    
+          ],
+        
         ),
-        body: Container(
-          child: const Text('Dashboard'),
-          ),
+        body: 
+          const Text('Dashboard'),
         ),
       );
   }
