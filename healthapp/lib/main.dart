@@ -14,30 +14,48 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.green,
           title: const Text('Health App'),
-          actions: [
-            IconButton(
-              onPressed: () {
-
-              }, 
-              icon: icon,
-              tooltip: 'Open dashboard'),
-            IconButton(
-              onPressed: () {
-
-              }, 
-              icon: icon,
-              tooltip: 'Open training panel'),
-            IconButton(
-              onPressed: () {
-
-              }, 
-              icon: icon,
-              tooltip: 'Open health panel')    
-          ],
+          centerTitle: true
         
         ),
-        body: 
-          const Text('Dashboard'),
+        body: Row(
+
+        ),
+
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.add), 
+          onPressed: () {
+
+            print('Pressed!'); 
+
+          }
+          ),
+          bottomNavigationBar: BottomNavigationBar(
+            
+            items: const [
+
+              BottomNavigationBarItem(
+                
+                icon: Icon(Icons.person),
+                label: 'Dashboard',
+              
+              ),
+              BottomNavigationBarItem(
+                
+                icon: Icon(Icons.leaderboard),
+                label: 'Training',
+              
+              ),
+              BottomNavigationBarItem(
+                
+                icon: Icon(Icons.backpack),
+                label: 'General',
+              
+              ),
+
+            ]
+            
+            ),
+
         ),
       );
   }
