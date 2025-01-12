@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp( const MyApp() );
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -10,53 +10,31 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.green,
-          title: const Text('Health App'),
-          centerTitle: true
-        
-        ),
-        body: Row(
-
-        ),
-
-        floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.add), 
-          onPressed: () {
-
-            print('Pressed!'); 
-
-          }
-          ),
+          appBar: AppBar(title: const Text('STAR Health')),
+          body: Center(
+              child:
+                  ElevatedButton(
+                    onPressed: () {
+                      print('Print something');
+                    },
+                    child: const Text('Click')
+                    )),
           bottomNavigationBar: BottomNavigationBar(
-            
             items: const [
-
+              BottomNavigationBarItem(icon: Icon(Icons.home), label: 'home'),
               BottomNavigationBarItem(
-                
-                icon: Icon(Icons.person),
-                label: 'Dashboard',
-              
-              ),
+                  icon: Icon(Icons.person), label: 'personal'),
               BottomNavigationBarItem(
-                
-                icon: Icon(Icons.leaderboard),
-                label: 'Training',
-              
-              ),
-              BottomNavigationBarItem(
-                
-                icon: Icon(Icons.backpack),
-                label: 'General',
-              
-              ),
-
-            ]
-            
-            ),
-
-        ),
-      );
+                icon: Icon(
+                  Icons.settings,
+                  size: 24,
+                ),
+                label: 'settings',
+              )
+            ],
+          )),
+    );
   }
 }
